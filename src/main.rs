@@ -1,6 +1,7 @@
 use trust_dns_resolver::config::*;
 use trust_dns_resolver::TokioAsyncResolver;
 use std::env;
+use colored::*;
 
 #[tokio::main]
 async fn main() {
@@ -29,9 +30,9 @@ async fn main() {
         Ok(response) => {
             let records = response.iter().map(|r| r.to_string()).collect::<Vec<_>>();
             if records.contains(&expected_value.to_string()) {
-                println!("The DNS TXT record matches the expected value.");
+                println!("{}","The DNS TXT record matches the expected value.".bold().italic().green());
             } else {
-                println!("The DNS TXT record does not match the expected value.");
+                println!("{}","The DNS TXT record does not match the expected value.".bold().italic().red());
             }
         }
         Err(err) => {

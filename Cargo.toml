@@ -1,8 +1,9 @@
 [package]
 name = "dnsverification"
-version = "0.1.1"
+version = "0.1.3"
 edition = "2021"
 
 [dependencies]
-tokio = { version = "1", features = ["full"] }
-trust-dns-resolver = "*"
+tokio = { version = "1.43.0", features = ["full"] }
+trust-dns-resolver = "0.23.2"
+colored = "3.0.0"
