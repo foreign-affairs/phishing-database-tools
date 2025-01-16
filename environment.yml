@@ -1,0 +1,9 @@
+name: rust_env
+channels:
+  - defaults
+dependencies:
+  - rust
+  - pip
+  - pip:
+      - trust-dns-resolver
+      - tokio
